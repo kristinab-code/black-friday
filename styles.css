@@ -602,11 +602,13 @@ body {
   padding: 0;
   position: absolute;
   right: 56px;
+  top: 42px;
   cursor: pointer;
 }
 @media (max-width: 767px) {
   .close-button {
     right: 30px;
+    top: 28px;
   }
 }
 
