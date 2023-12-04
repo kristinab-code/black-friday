@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<script src="scripts.js"></script>
+	<title>Black Friday</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="logo">
+				<img src="images/roistat.svg" alt="Roistat">
+			</div>
+			<button class="burger">
+				<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15 19H47" stroke="#E0EAFF" stroke-width="2" stroke-linecap="round" />
+					<path d="M31 29H47" stroke="#E0EAFF" stroke-width="2" stroke-linecap="round" />
+				</svg>
+			</button>
+			<nav class="nav">
+				<ul class="menu">
+					<li class="menu-item"><a class="menu-link" href="#">Наши предложения</a></li>
+					<li class="menu-item"><a class="menu-link" href="#">Цены</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<h1 class="heading">
+				<span class="heading-white">
+					<span class="rope-left"><span class="circle"></span><span class="line"></span></span>
+					Черная
+					<span class="rope-right"><span class="circle"></span><span class="line"></span></span>
+				</span>
+				<span class="heading-pink">					
+					<img class="sale-back" src="images/sale-back.svg">
+					Пятница					
+					<img class="sale" src="images/sale.svg">
+				</span>
+			</h1>
+			<div class="grid">
+				<div class="text-block">
+					<p class="description">Воспользуйтесь выгодными предложениями от Roistat в ноябре*</p>
+					<a href="#" class="button text-block-button" onclick="document.getElementById('dialog').showModal()">Получить выгоду</a>
+				</div>
+				<p class="disclaimer">*Акция не распространяется на подключение опций, лимитов, которые были подключены ранее до 1.11.2023 Количество
+				предложений ограничено</p>
+			</div>
+		</div>		
+		<div class="ribbon"></div>
+		<dialog class="dialog" id="dialog">			
+			<form class="dialog-form" novalidate action="submit.php" method="post">
+				<button class="close-button" onclick="document.getElementById('dialog').close()">
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M22.0014 8L16 14L10 8L8 10L14 16L8 22L10 24L16 18L22.0014 24L24.0014 22L18.0014 16L24.0014 10L22.0014 8Z"
+							fill="#F0F0F0" />
+					</svg>
+				</button>
+				<h3 class="dialog-heading">Регистрация</h3>
+				<div class="dialog-input-wrapper">
+					<input class="dialog-input" type="text" id="name" name="name" placeholder="Имя" required>					
+				</div>
+				<div class="error-message" id="name-error"></div>
+				<div class="dialog-input-wrapper">
+					<input class="dialog-input" type="url" id="site" name="site" placeholder="Сайт компании" required>					
+				</div>
+				<div class="error-message" id="site-error"></div>
+				<div class="dialog-input-wrapper">
+					<input class="dialog-input" type="tel" id="tel" name="tel" placeholder="Телефон" pattern="\\+?[0-9]{10,}" required>					
+				</div>
+				<div class="error-message" id="tel-error"></div>
+				<button class="button dialog-button" id="button" type="submit">Получить код</button>
+				<label class="dialog-disclaimer">Отправляя сведения через электронную форму, вы даете согласие на обработку персональных данных, в том числе сбор,
+				хранение и передачу третьим лицам представленной вами информации на условиях <a href="#">Политики обработки персональных данных</a>.
+					<input type="checkbox" name="consent" id="consent">
+					<span class="checkmark"></span>
+				</label>
+				<div class="error-message" id="consent-error"></div>
+			</form>
+		</dialog>
+	</main>
+</body>
+</html>
